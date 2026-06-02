@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
-const roles = ["Developer", "DevSecOps", "Platform Developer", "Problem Solver"];
+const roles = ["Developer", "DevSecOps Engineer", "Platform Developer", "Problem Solver"];
 
 export default function Hero() {
   const [text, setText] = useState("");
@@ -66,16 +66,16 @@ export default function Hero() {
           </div>
           <div className="hero__stats">
             <div>
-              <strong>8+</strong>
+              <strong>5+</strong>
               <span>years</span>
             </div>
             <div>
-              <strong>30+</strong>
-              <span>products</span>
+              <strong>4+</strong>
+              <span>cleared contracts supported</span>
             </div>
             <div>
-              <strong>Secret</strong>
-              <span>clearance</span>
+              <strong>Active Secret</strong>
+              <span>Interim Top Secret w/ SCI pending adjudication</span>
             </div>
           </div>
         </div>
@@ -83,10 +83,10 @@ export default function Hero() {
         <aside className="hero__card">
           <div className="hero__card-header">
             <p className="hero__card-label">Clearance</p>
-            <span className="hero__card-status">Secret Active</span>
+            <span className="hero__card-status">Active Secret — Interim Top Secret w/ SCI pending adjudication</span>
           </div>
           <div className="hero__card-body">
-            <p>Interim TS</p>
+            <p>Active Secret, Interim Top Secret w/ SCI pending adjudication.</p>
             <p>Operational readiness for secure programs and platform delivery.</p>
           </div>
           <div className="hero__contact-list">

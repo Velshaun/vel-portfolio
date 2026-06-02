@@ -12,6 +12,11 @@ const navItems = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }, [menuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +29,24 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className={`nav__wrapper ${scrolled ? "nav__wrapper--scrolled" : ""}`}>
+    <header className={`nav__wrapper ${scrolled ? "nav__wrapper--scrolled" : ""} ${menuOpen ? "nav__menu--open" : ""}`}>
       <nav className="nav">
         <div className="nav__brand">
           VB
           <span className="nav__brand-dot">.</span>
         </div>
+
+        <button
+          className={`nav__toggle ${menuOpen ? "is-open" : ""}`}
+          onClick={() => setMenuOpen((s) => !s)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         <div className="nav__links">
           {navItems.map(({ id, label }) => (
             <Link
@@ -41,6 +58,7 @@ export default function Nav() {
               duration={500}
               className="nav__link"
               activeClass="nav__link--active"
+              onClick={() => setMenuOpen(false)}
             >
               {label}
             </Link>
@@ -50,6 +68,29 @@ export default function Nav() {
           <Link to="contact" spy smooth offset={-80} duration={500} className="nav__cta">
             Hire Me
           </Link>
+        </div>
+
+        <div className="nav__mobile" onClick={() => setMenuOpen(false)}>
+          <div className="nav__mobile-inner" onClick={(e) => e.stopPropagation()}>
+            {navItems.map(({ id, label }) => (
+              <Link
+                key={`${id}-mobile`}
+                to={id}
+                spy
+                smooth
+                offset={-80}
+                duration={500}
+                className="nav__link nav__link--mobile"
+                activeClass="nav__link--active"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            <Link to="contact" spy smooth offset={-80} duration={500} className="nav__cta nav__cta--mobile" onClick={() => setMenuOpen(false)}>
+              Hire Me
+            </Link>
+          </div>
         </div>
       </nav>
     </header>

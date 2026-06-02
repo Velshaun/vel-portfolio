@@ -1,7 +1,7 @@
 const certifications = [
-  { title: "Google UX Design Professional Certificate", provider: "Google" },
-  { title: "AWS Certified Cloud Practitioner", provider: "Amazon Web Services" },
-  { title: "React Developer Bootcamp", provider: "Frontend Masters" },
+  { title: "CompTIA Security+", provider: "CompTIA" },
+  { title: "ITIL 4 Foundation", provider: "Axelos" },
+  { title: "Python Full Stack Web Development", provider: "PDX Code Guild" },
 ];
 
 export default function Certifications() {

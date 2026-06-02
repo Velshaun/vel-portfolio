@@ -5,8 +5,6 @@ const skills = [
   { icon: "⏭️", name: "Next.js", type: "Framework" },
   { icon: "🌐", name: "Django", type: "Backend" },
   { icon: "🗄️", name: "PostgreSQL", type: "Database" },
-  { icon: "☕", name: "Java", type: "Platform" },
-  { icon: "🚀", name: "Spring Boot", type: "API" },
   { icon: "🐳", name: "Docker", type: "Containers" },
   { icon: "☁️", name: "AWS", type: "Cloud" },
   { icon: "⚙️", name: "GitHub Actions", type: "CI/CD" },

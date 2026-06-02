@@ -15,13 +15,13 @@ const contactLinks = [
     href: "https://www.linkedin.com/in/vel-byers-1910b224a/",
     icon: "💼",
     label: "LinkedIn",
-    value: "linkedin.com/in/velbyers",
+    value: "linkedin.com/in/vel-byers-1910b224a",
   },
   {
-    href: "https://github.com/velbyers",
+    href: "https://github.com/velshaun",
     icon: "🐙",
     label: "GitHub",
-    value: "github.com/velbyers",
+    value: "github.com/velshaun",
   },
   {
     href: "/resume.pdf",
