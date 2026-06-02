@@ -65,7 +65,7 @@ a {
   align-items: center;
   font-weight: 800;
   letter-spacing: 0.12em;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
 }
 
 .nav__brand-dot {
@@ -160,7 +160,7 @@ a {
 
 .hero {
   position: relative;
-  padding: 5.5rem 1.5rem 3rem;
+  padding: 7rem 1.5rem 3rem;
   background: linear-gradient(180deg, rgba(8, 14, 32, 0.96) 0%, rgba(5, 7, 15, 1) 100%);
   overflow: hidden;
 }
