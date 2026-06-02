@@ -15,7 +15,7 @@ const contactLinks = [
     href: "https://www.linkedin.com/in/vel-byers-1910b224a/",
     icon: "💼",
     label: "LinkedIn",
-    value: "linkedin.com/in/vel-byers-1910b224a",
+    value: "Vel Byers",
   },
   {
     href: "https://github.com/velshaun",
