@@ -1,6 +1,8 @@
+// Navigation bar component that includes a scrolling link menu and mobile toggle.
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
+// Navigation items used for scroll-linked anchors in the nav menu.
 const navItems = [
   { id: "hero", label: "Home" },
   { id: "skills", label: "Skills" },
@@ -11,10 +13,13 @@ const navItems = [
 ];
 
 export default function Nav() {
+  // Track whether the page has been scrolled so the nav can change style.
   const [scrolled, setScrolled] = useState(false);
+  // Track whether the mobile menu is open so we can toggle visibility.
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Prevent body scroll when the mobile menu is open.
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
@@ -48,6 +53,7 @@ export default function Nav() {
         </button>
 
         <div className="nav__links">
+          {/* Desktop nav links that scroll to each section of the page. */}
           {navItems.map(({ id, label }) => (
             <Link
               key={id}

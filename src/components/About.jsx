@@ -1,3 +1,4 @@
+// About section summarizes the portfolio owner's background, values, and approach.
 export default function About() {
   return (
     <section className="section" id="about">
@@ -5,14 +6,14 @@ export default function About() {
         <span className="section__tag">About</span>
         <h2>A few words about my approach</h2>
       </div>
+      {/* About text explains the developer's working style and background. */}
       <div className="about__content">
         <p>
-          I partner with product teams to shape digital products that feel fast, clear, and polished. My work blends
-          design systems, component-based interfaces, and motion to create memorable user journeys.
-        </p>
-        <p>
-          I value accessibility, lightweight performance, and collaboration. Every project starts with the problem
-          and ends with a refined outcome that people actually enjoy using.
+          I'm a full-stack developer and cloud engineer with a background spanning government-level support,
+          enterprise infrastructure, and modern application development. I've contributed to work that supported the
+          Department of State and White House operations, and I bring that same precision and reliability to every
+          project I build. I work across the stack — from cloud infrastructure to polished front-end experiences —
+          and I'm driven by building things that are fast, functional, and built to last.
         </p>
       </div>
     </section>

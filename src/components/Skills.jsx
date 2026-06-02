@@ -1,3 +1,5 @@
+// Skills section lists the technologies and categories used across the portfolio.
+// List of skills displayed in the Skills section. Each skill has an icon and category.
 const skills = [
   { icon: "JS", name: "JavaScript", type: "Frontend" },
   { icon: "⚛️", name: "React", type: "UI Library" },
@@ -21,6 +23,7 @@ export default function Skills() {
         <h2>What I build with</h2>
       </div>
       <div className="skills__grid">
+        {/* Render one card per skill item in the skills array. */}
         {skills.map((skill) => (
           <article key={skill.name} className="skill-card skill-card--feature">
             <div className="skill-card__icon">{skill.icon}</div>

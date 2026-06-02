@@ -1,3 +1,5 @@
+// Simple skill strip component that repeats a list of technology badges in a carousel.
+// Strip component that visually repeats a list of skills in a scrolling row.
 export default function Strip() {
   const skills = [
     { icon: "JS", name: "JavaScript" },
@@ -14,6 +16,7 @@ export default function Strip() {
     { icon: "📊", name: "Splunk" },
   ];
 
+  // Duplicate the skill list to allow continuous scrolling animation.
   const loop = [...skills, ...skills];
 
   return (

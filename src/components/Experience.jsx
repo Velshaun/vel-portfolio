@@ -1,3 +1,6 @@
+// Timeline-style experience section listing past roles, organizations, and skills.
+// Experience timeline entries. Each entry includes dates, organization, role,
+// description, and a set of key skills or focus areas.
 const experience = [
   {
     date: "Mar 2024 – Dec 2025",
@@ -57,6 +60,7 @@ export default function Experience() {
         <h2>Professional experience</h2>
       </div>
       <div className="timeline">
+        {/* Render each experience entry with date, company, role, and tag badges. */}
         {experience.map((entry) => (
           <article key={`${entry.company}-${entry.role}`} className="timeline-card timeline-card--row">
             <div className="timeline-card__header">

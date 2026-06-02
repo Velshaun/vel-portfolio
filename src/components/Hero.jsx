@@ -1,11 +1,16 @@
+// Hero section component with animated typewriter text and quick action links.
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
+// Roles shown in the hero section with a typewriter animation.
 const roles = ["Developer", "DevSecOps Engineer", "Platform Developer", "Problem Solver"];
 
 export default function Hero() {
+  // Current text for the typewriter effect.
   const [text, setText] = useState("");
+  // Index of the current role in the roles array.
   const [index, setIndex] = useState(0);
+  // Whether the typewriter is currently deleting characters.
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
@@ -16,8 +21,10 @@ export default function Hero() {
 
     const timeout = window.setTimeout(() => {
       if (isComplete) {
+        // Pause on the full role text before deleting it.
         setIsDeleting(true);
       } else if (isCleared) {
+        // Move to the next role once the text is fully deleted.
         setIsDeleting(false);
         setIndex((prev) => (prev + 1) % roles.length);
       } else {
@@ -35,6 +42,7 @@ export default function Hero() {
 
   return (
     <section className="hero" id="hero">
+      {/* Decorative overlay grid behind the hero content. */}
       <div className="hero__overlay" />
       <div className="hero__grid">
         <div className="hero__left">

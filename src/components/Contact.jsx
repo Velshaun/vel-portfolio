@@ -1,3 +1,5 @@
+// Contact section with call-to-action links for phone, email, LinkedIn, GitHub, and resume.
+// Each item includes the href target, display icon, label, visible value, and optional download flag.
 const contactLinks = [
   {
     href: "tel:+18168097899",
@@ -49,6 +51,7 @@ export default function Contact() {
           </p>
         </div>
         <div className="contact-box__right">
+          {/* Render contact links and adjust attributes for downloads vs external links. */}
           {contactLinks.map((item) => (
             <a
               key={item.label}

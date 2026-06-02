@@ -1,3 +1,4 @@
+/* Global visual theme and base style settings for the app. */
 :root {
   color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,6 +36,7 @@ a {
   font: inherit;
 }
 
+/* Navigation bar styling for desktop and mobile variants. */
 .nav__wrapper {
   position: fixed;
   inset: 0 0 auto 0;
@@ -389,6 +391,7 @@ a {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Button variants used for hero calls to action and secondary links. */
 .button:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 34px rgba(95, 135, 255, 0.18);
@@ -399,6 +402,7 @@ a {
   color: #f5f7fb;
 }
 
+/* Skill strip section styling for continuous scrolling badges. */
 .strip {
   margin: 0 auto;
   max-width: 1180px;

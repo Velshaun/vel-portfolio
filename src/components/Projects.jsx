@@ -1,3 +1,6 @@
+// Project highlights section with featured and supporting work cards.
+// Featured project data for the Projects section.
+// Each object contains the display order, emoji, title, description, tags, and repo link.
 const projects = [
   {
     number: "01",
@@ -43,6 +46,7 @@ export default function Projects() {
         <h2>Featured work</h2>
       </div>
       <div className="projects__grid">
+        {/* Render each project as a card with metadata, tags, and a GitHub link. */}
         {projects.map((project) => (
           <article
             key={project.title}

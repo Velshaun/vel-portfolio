@@ -1,3 +1,5 @@
+// App shell that composes the page from smaller, reusable components.
+// This root component defines the main layout and the order of sections.
 import "./App.css";
 import { motion } from "framer-motion";
 import Nav from "./components/Nav";
@@ -14,9 +16,12 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="app">
+      {/* Top navigation and hero section are always visible first. */}
       <Nav />
       <Hero />
+      {/* A repeating tech strip that visually highlights key skills. */}
       <Strip />
+      {/* Animate the main content into view once on scroll. */}
       <motion.main
         className="main"
         initial={{ opacity: 0, y: 24 }}
@@ -24,6 +29,7 @@ function App() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
+        {/* Each section is rendered in order inside the main document flow. */}
         <Skills />
         <Certifications />
         <Projects />

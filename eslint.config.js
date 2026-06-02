@@ -4,6 +4,8 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
+// ESLint configuration for the project. It applies recommended JS and React
+// rules, plus the Vite plugin and React Hooks rules for safe component usage.
 export default defineConfig([
   globalIgnores(['dist']),
   {
