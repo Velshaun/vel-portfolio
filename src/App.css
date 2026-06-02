@@ -53,11 +53,12 @@ a {
 .nav {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  position: relative;
 }
 
 .nav__brand {
@@ -65,7 +66,10 @@ a {
   align-items: center;
   font-weight: 800;
   letter-spacing: 0.12em;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav__brand-dot {
@@ -160,7 +164,7 @@ a {
 
 .hero {
   position: relative;
-  padding: 7rem 1.5rem 3rem;
+  padding: 5.5rem 1.5rem 3rem;
   background: linear-gradient(180deg, rgba(8, 14, 32, 0.96) 0%, rgba(5, 7, 15, 1) 100%);
   overflow: hidden;
 }
@@ -192,6 +196,10 @@ a {
   z-index: 1;
 }
 
+.hero__left {
+  margin-top: 4.5rem;
+}
+
 .hero__badge {
   display: inline-flex;
   padding: 0.65rem 0.95rem;
@@ -202,6 +210,8 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 51;
 }
 
 .hero__title {
@@ -227,7 +237,7 @@ a {
 }
 
 .hero__typewriter {
-  color: #ffffff;
+  color: #f4c04d;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -487,6 +497,7 @@ a {
 
 .section__header {
   margin-bottom: 1.75rem;
+  text-align: center;
 }
 
 .section__tag {
@@ -704,8 +715,8 @@ a {
   display: inline-flex;
   padding: 0.5rem 0.85rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #d9e0ff;
+  background: rgba(244, 192, 77, 0.15);
+  color: #f4c04d;
   font-size: 0.85rem;
 }
 
