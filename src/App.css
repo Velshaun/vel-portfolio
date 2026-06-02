@@ -430,6 +430,11 @@ a {
   font-weight: 800;
   font-size: 1.05rem;
   color: #f4c04d;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel__name {
@@ -847,7 +852,7 @@ a {
   }
 
   .nav__mobile {
-    display: block;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;

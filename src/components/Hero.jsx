@@ -90,12 +90,12 @@ export default function Hero() {
             <p>Operational readiness for secure programs and platform delivery.</p>
           </div>
           <div className="hero__contact-list">
-            <a href="tel:+15551234567">Phone</a>
-            <a href="mailto:hello@velbyers.com">Email</a>
-            <a href="https://linkedin.com/in/velbyers" target="_blank" rel="noreferrer">
+            <a href="tel:+18168097899">Phone</a>
+            <a href="mailto:vellbyers@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vel-byers-1910b224a/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com/velbyers" target="_blank" rel="noreferrer">
+            <a href="https://github.com/velshaun" target="_blank" rel="noreferrer">
               GitHub
             </a>
             <a href="/resume.pdf" download>
