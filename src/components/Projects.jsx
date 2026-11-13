@@ -1,42 +1,66 @@
-// Project highlights section with featured and supporting work cards.
-// Featured project data for the Projects section.
-// Each object contains the display order, emoji, title, description, tags, and repo link.
+// Project highlights section. Live projects link to the deployed app;
+// upcoming projects show an "In Progress" badge and download a project brief PDF.
 const projects = [
   {
-    number: "01",
-    emoji: "🏦",
-    title: "Python Banking App",
-    description: "A secure banking prototype with account workflows, transaction monitoring, and role-based access.",
-    tags: ["Python", "Flask", "Security"],
-    repo: "https://github.com/velbyers/python-banking-app",
-    featured: true,
+    title: "Pro Clubs Dashboard",
+    description:
+      "Custom dashboard for my EA FC Pro Clubs squad. Collects match data automatically, tracks player form, and uses AI to analyze performance, with a Discord bot for match reports.",
+    tags: ["React", "FastAPI", "Python", "Claude API", "Discord Bot"],
+    status: "live",
+    liveUrl: "https://proclubs-dashboard.vercel.app/",
   },
   {
-    number: "02",
-    emoji: "☁️",
-    title: "AI Weather Dashboard",
-    description: "A predictive weather dashboard with machine learning insights, alerts, and real-time status cards.",
-    tags: ["React", "FastAPI", "AI"],
-    repo: "https://github.com/velbyers/ai-weather-dashboard",
+    title: "ConverseAI",
+    description:
+      "AI powered conversational study app. Upload your course material and get lectures with a voice tutor, flashcards, quizzes, and full length practice exams, plus a readiness dashboard by exam domain.",
+    tags: ["React", "Vite", "Tailwind CSS", "FastAPI", "Supabase", "Gemini", "OpenAI TTS", "PWA"],
+    status: "live",
+    liveUrl: "https://ai-study-tutor-nu.vercel.app/",
   },
   {
-    number: "03",
-    emoji: "🍽️",
-    title: "SA Restaurant Finder",
-    description: "A location-aware restaurant finder with filters, reviews, and dynamic map integration.",
-    tags: ["Next.js", "Geo", "UX"],
-    repo: "https://github.com/velbyers/sa-restaurant-finder",
+    title: "FitU",
+    description:
+      "A ground up rebuild of my boot camp capstone and first full stack app. Fitness and nutrition in one place, built around an interactive calendar with an AI trainer and AI chef.",
+    tags: ["React", "Tailwind CSS", "FastAPI", "OAuth 2.0", "OpenAI", "pytest", "GitHub Actions"],
+    status: "upcoming",
+    pdfUrl: "/docs/fitu-project-brief.pdf",
   },
   {
-    number: "04",
-    emoji: "💪",
-    title: "FitYou Fitness App",
-    description: "A responsive fitness platform for coaching plans, scheduling, and progress tracking.",
-    tags: ["React Native", "API", "Wellness"],
-    repo: "https://github.com/velbyers/fityou-fitness-app",
-    featured: true,
+    title: "Prop Probability Engine",
+    description:
+      "A probability tool, not a betting tool. Compares posted player prop lines against real matchup data and returns a probability with the reasoning behind it.",
+    tags: ["React", "FastAPI", "Python", "LLM Reasoning Layer", "Sports Data APIs", "pytest", "GitHub Actions"],
+    status: "upcoming",
+    pdfUrl: "/docs/prop-probability-engine-project-brief.pdf",
+  },
+  {
+    title: "Talofa",
+    description:
+      "A Samoan language learning app built on conversation. You chat in English while Current mode flows Samoan words in, and you learn them from context.",
+    tags: ["React", "FastAPI", "Whisper", "Fine Tuned Open Model", "Parallel Corpus", "pytest", "GitHub Actions"],
+    status: "upcoming",
+    pdfUrl: "/docs/talofa-project-brief.pdf",
   },
 ];
+
+// Link attributes and accessible label for a card, based on its status.
+function cardLink(project) {
+  if (project.status === "live") {
+    return {
+      href: project.liveUrl,
+      target: "_blank",
+      rel: "noreferrer",
+      "aria-label": `${project.title}, live project. Open the app in a new tab.`,
+      cta: "View live app",
+    };
+  }
+  return {
+    href: project.pdfUrl,
+    download: "",
+    "aria-label": `${project.title}, in progress. Download the project brief PDF.`,
+    cta: "Download project brief",
+  };
+}
 
 export default function Projects() {
   return (
@@ -46,30 +70,35 @@ export default function Projects() {
         <h2>Featured work</h2>
       </div>
       <div className="projects__grid">
-        {/* Render each project as a card with metadata, tags, and a GitHub link. */}
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className={`project-card ${project.featured ? "project-card--featured" : ""}`}
-          >
-            <div className="project-card__meta">
-              <span className="project-card__number">{project.number}</span>
-              <span className="project-card__emoji">{project.emoji}</span>
-              <h3>{project.title}</h3>
-            </div>
-            <p className="project-card__description">{project.description}</p>
-            <div className="project-card__tags">
-              {project.tags.map((tag) => (
-                <span key={tag} className="project-card__tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <a href={project.repo} target="_blank" rel="noreferrer" className="project-card__cta">
-              View on GitHub <span aria-hidden="true">→</span>
+        {projects.map((project, index) => {
+          const { cta, ...linkProps } = cardLink(project);
+          return (
+            <a
+              key={project.title}
+              {...linkProps}
+              className={`project-card ${index === 0 ? "project-card--featured" : ""}`}
+            >
+              <div className="project-card__meta">
+                <span className="project-card__number">{String(index + 1).padStart(2, "0")}</span>
+                <h3>{project.title}</h3>
+                {project.status === "upcoming" && (
+                  <span className="project-card__badge">In Progress</span>
+                )}
+              </div>
+              <p className="project-card__description">{project.description}</p>
+              <div className="project-card__tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="project-card__tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <span className="project-card__cta" aria-hidden="true">
+                {cta} <span>{project.status === "live" ? "→" : "↓"}</span>
+              </span>
             </a>
-          </article>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
