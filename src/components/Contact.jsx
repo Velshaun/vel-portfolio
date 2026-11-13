@@ -26,7 +26,7 @@ const contactLinks = [
     value: "github.com/velshaun",
   },
   {
-    href: "/resume.pdf",
+    href: "/VelShaun-Byers-Resume.pdf",
     icon: "📄",
     label: "Resume",
     value: "Download PDF",

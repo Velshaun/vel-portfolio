@@ -106,7 +106,7 @@ export default function Hero() {
             <a href="https://github.com/velshaun" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a href="/resume.pdf" download>
+            <a href="/VelShaun-Byers-Resume.pdf" download>
               Resume
             </a>
           </div>
