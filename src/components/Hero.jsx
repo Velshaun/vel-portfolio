@@ -82,8 +82,8 @@ export default function Hero() {
               <span>cleared contracts supported</span>
             </div>
             <div>
-              <strong>Active Secret</strong>
-              <span>Interim Top Secret w/ SCI pending adjudication</span>
+              <strong>Active TS/SCI</strong>
+              <span>clearance</span>
             </div>
           </div>
         </div>
@@ -91,10 +91,10 @@ export default function Hero() {
         <aside className="hero__card">
           <div className="hero__card-header">
             <p className="hero__card-label">Clearance</p>
-            <span className="hero__card-status">Active Secret — Interim Top Secret w/ SCI pending adjudication</span>
+            <span className="hero__card-status">Active TS/SCI clearance</span>
           </div>
           <div className="hero__card-body">
-            <p>Active Secret, Interim Top Secret w/ SCI pending adjudication.</p>
+            <p>Active TS/SCI clearance.</p>
             <p>Operational readiness for secure programs and platform delivery.</p>
           </div>
           <div className="hero__contact-list">
